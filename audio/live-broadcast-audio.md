@@ -2,7 +2,7 @@
 description: Get BFF.fm playback live in your app.
 ---
 
-# Live Broadcast Audio
+# Live Broadcast
 
 {% api-method method="get" host="https://stream.bff.fm" path="/1/mp3.format" %}
 {% api-method-summary %}
