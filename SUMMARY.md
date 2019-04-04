@@ -4,11 +4,11 @@
 
 ## Audio
 
-* [Live Broadcast](audio/live-broadcast-audio.md)
+* [Live Broadcast](audio/stream.md)
 * [Podcasts](audio/podcasts.md)
 
 ## APIs & Endpoints
 
-* [Now Playing](apis-and-endpoints/now-playing.md)
-* [Schedules](apis-and-endpoints/schedule.md)
+* [Now Playing](api/now-playing.md)
+* [Schedules](api/schedule.md)
 
