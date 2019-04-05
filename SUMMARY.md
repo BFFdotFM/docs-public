@@ -7,7 +7,7 @@
 * [Live Broadcast](audio/stream.md)
 * [Podcasts](audio/podcasts.md)
 
-## APIs & Endpoints
+## APIs & Data
 
 * [Now Playing](api/now-playing.md)
 * [Schedules](api/schedule.md)
