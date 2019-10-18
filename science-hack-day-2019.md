@@ -22,7 +22,7 @@ We've also created a special bundle of _every song we ever tracked,_ dating back
 
 {% file src=".gitbook/assets/bff-fm-tracks-data-2019-10-18.zip" caption="BFF.fm Tracks Data \(2019-10-18\)" %}
 
-Have at it, have fun!
+[![Creative Commons Licence](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc/4.0/)This data is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
 
 ## How can I share what I build?
 
