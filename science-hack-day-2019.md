@@ -26,7 +26,7 @@ We've also created a special bundle of _every song we ever tracked,_ dating back
 
 ## How can I share what I build?
 
-First of all, present your hack at Science Hack Day on Sunday afternoon, where BFF.fm's technical directory Ben Ward will be MC'ing the event!
+First of all, present your hack at Science Hack Day on Sunday afternoon, where BFF.fm's technical director Ben Ward will be MC'ing the event!
 
 Second, get in touch with us about anything at all by emailing tech@bff.fm and tweeting to [@bffdotfm;](https://twitter.com/bffdotfm) we look forward to sharing our favourite creations!
 
