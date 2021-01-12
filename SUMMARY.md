@@ -17,4 +17,5 @@
 * [About BFF.fm](https://bff.fm/about)
 * [BFF.fm on Github](https://github.com/BFFdotFM)
 * [Developer Rules](about/developer-rules.md)
+* [Code of Conduct](about/code-of-conduct.md)
 

@@ -40,8 +40,8 @@ You may include this parameter to identify your app in our stats, so that we can
 
 {% endapi-method-response-example-description %}
 
-{% code-tabs %}
-{% code-tabs-item title="mp3.mp3" %}
+{% tabs %}
+{% tab title="mp3.mp3" %}
 ```http
 HTTP/1.0 200 OK
 Access-Control-Expose-Headers: ETag, If-None-Match
@@ -67,16 +67,16 @@ Content-Type: audio/mpeg
 
 [MP3 Binary Data]
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="mp3.m3u" %}
+{% tab title="mp3.m3u" %}
 ```
 http://stream.bff.fm/1/mp3.mp3
 
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="mp3.pls" %}
+{% tab title="mp3.pls" %}
 ```
 [playlist]
 File1=http://stream.bff.fm/1/mp3.mp3
@@ -85,9 +85,9 @@ Length1=-1
 NumberOfEntries=1
 Version=2
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="mp3.xspf" %}
+{% tab title="mp3.xspf" %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <playlist xmlns="http://xspf.org/ns/0/" version="1">
@@ -104,8 +104,8 @@ Version=2
   </trackList>
 </playlist>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
