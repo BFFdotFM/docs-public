@@ -2,7 +2,6 @@
 
 {% api-method method="get" host="https://data.bff.fm" path="/api/data/tracks/detail.text" %}
 {% api-method-summary %}
-  
 Detailed Metadata
 {% endapi-method-summary %}
 
