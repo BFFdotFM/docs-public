@@ -1,6 +1,6 @@
 # Now Playing
 
-{% api-method method="get" host="https://data.bff.fm" path="/nowplaying.txt" %}
+{% api-method method="get" host="https://data.bff.fm" path="/api/data/tracks/detail.text" %}
 {% api-method-summary %}
   
 Detailed Metadata
@@ -41,7 +41,7 @@ Artwork: https://a.bff.fm/image/original/trs2.jpg
 See Also: [Audio Hijack Pro's “Now Playing.txt” documentation](https://rogueamoeba.com/support/knowledgebase/?showArticle=AHBroadcastNotes#nowplayingfile).
 {% endhint %}
 
-{% api-method method="get" host="https://data.bff.fm" path="/nowplaying-mini.txt" %}
+{% api-method method="get" host="https://data.bff.fm" path="/api/data/tracks/now.text" %}
 {% api-method-summary %}
 One-Line Summary
 {% endapi-method-summary %}
