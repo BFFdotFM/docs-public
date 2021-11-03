@@ -2,38 +2,22 @@
 description: Feeds for show archives.
 ---
 
-# Podcasts
+# Shows & Podcasts
 
-{% api-method method="get" host="https://data.bff.fm" path="/shows/:show.rss" %}
-{% api-method-summary %}
-Single Show Podcast
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://data.bff.fm" path="/shows/:show.rss" method="get" summary="Single Show Podcast" %}
+{% swagger-description %}
 RSS feed of a specific show.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="show" type="string" required=true %}
+{% swagger-parameter in="path" name="show" type="string" %}
 Slug name for the show being requested
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" %}
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-RSS feed, with iTunes extensions.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="RSS feed, with iTunes extensions." %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" 
@@ -138,35 +122,19 @@ RSS feed, with iTunes extensions.
   </channel>
 </rss>
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://data.bff.fm" path="/shows/all.opml" %}
-{% api-method-summary %}
-Podcast Index
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://data.bff.fm" path="/api/data/shows/all.opml" method="get" summary="All Shows Index" %}
+{% swagger-description %}
 OPML outline for all shows on BFF.fm, linking to respective RSS feeds.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=false %}
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-OPML outline of all BFF.fm shows \(truncated.\)
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="OPML outline of all BFF.fm shows (truncated.)" %}
 ```markup
 <?xml version="1.0" encoding="utf-8" ?>
 <opml version="2.0">
@@ -187,8 +155,71 @@ OPML outline of all BFF.fm shows \(truncated.\)
   </body>
 </opml>
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
+{% swagger method="get" path="/api/data/shows/day/:day.opml" baseUrl="https://data.bff.fm" summary="Schedule Index" %}
+{% swagger-description %}
+OPML outline for day scheduled show linking to respective RSS feeds.
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="day" required="true" %}
+Name of the schedule day to return. One of 
+
+`monday`
+
+ , 
+
+`tuesday`
+
+, 
+
+`wednesday`
+
+, 
+
+`thursday`
+
+, 
+
+`friday`
+
+, 
+
+`saturday`
+
+, 
+
+`sunday`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="app_id" %}
+You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="OPML outline of shows scheduled on the specified day." %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/api/data/shows/podcasts.opml" baseUrl="https://data.bff.fm" summary="Podcasts Index" %}
+{% swagger-description %}
+OPML outline for all Podcasts in the BFF.fm Podcast Network.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="app_id" %}
+You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="OPML outline of shows scheduled on the specified day." %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}

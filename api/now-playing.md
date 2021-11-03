@@ -1,74 +1,110 @@
 # Now Playing
 
-{% api-method method="get" host="https://data.bff.fm" path="/api/data/tracks/detail.text" %}
-{% api-method-summary %}
-Detailed Metadata
-{% endapi-method-summary %}
+## Unified Metadata
 
-{% api-method-description %}
-What's currently playing on the BFF.fm stream.
-{% endapi-method-description %}
+{% swagger method="get" path="/api/data/onair/now.json" baseUrl="https://data.bff.fm" summary="On Air" %}
+{% swagger-description %}
+An endpoint which will return what's currently playing on BFF.fm at the finest fidelity available: the track, or current playing show.
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=false %}
+{% swagger-parameter in="query" name="app_id" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
+{% swagger-response status="200: OK" description="" %}
+Example Track response
 
-```text
+```
+{
+   title: I NEED YOU TO (BREONNA TAYLOR)
+   attribution: Tobe Nwigwe
+   collection: THE PANDEMIC PROJECT
+   licensor: Self Released
+   image: https://a.bff.fm/…/album.jpg
+   url: https://bff.fm/broadcasts/234345324
+   type: track
+}
+```
+
+Example Show response
+
+```
+{
+   title: No Magic
+   attribution: Ben Ward
+   collection: BFF.fm
+   licensor: BFF.fm
+   image: https://a.bff.fm/…/logo.jpg
+   url: https://bff.fm/shows/nomagic
+   type: show
+}
+```
+
+
+{% endswagger-response %}
+{% endswagger %}
+
+## Track Metadata
+
+{% swagger baseUrl="https://data.bff.fm" path="/api/data/tracks/detail.text" method="get" summary="Detailed Metadata" %}
+{% swagger-description %}
+What's currently playing on the BFF.fm stream.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="app_id" type="string" %}
+You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="Cake successfully retrieved." %}
+```
 Title: There Goes The Fear
 Artist: Doves
 Album: The Last Broadcast
 Label: Heavenly
 Artwork: https://a.bff.fm/image/original/trs2.jpg
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 {% hint style="info" %}
 See Also: [Audio Hijack Pro's “Now Playing.txt” documentation](https://rogueamoeba.com/support/knowledgebase/?showArticle=AHBroadcastNotes#nowplayingfile).
 {% endhint %}
 
-{% api-method method="get" host="https://data.bff.fm" path="/api/data/tracks/now.text" %}
-{% api-method-summary %}
-One-Line Summary
-{% endapi-method-summary %}
+{% swagger baseUrl="https://data.bff.fm" path="/api/data/tracks/now.text" method="get" summary="One-Line Summary" %}
+{% swagger-description %}
+A single-line summary of what's playing on BFF.fm. 
 
-{% api-method-description %}
-A single-line summary of what's playing on BFF.fm. `Track Name` followed by `Artist`, separated by `-`.
-{% endapi-method-description %}
+`Track Name`
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=false %}
+ followed by 
+
+`Artist`
+
+, separated by 
+
+`-`
+
+.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 Because It's Not Love (But It's Still A Feeling) - The Pipettes
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/api/data/tracks/now.json" baseUrl="https://data.bff.fm" summary="JSON structured Detailed Metadata" %}
+{% swagger-description %}
+The current artist, track, album and record label being played on BFF.fm
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="app_id" %}
+You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
+{% endswagger-parameter %}
+{% endswagger %}
 
