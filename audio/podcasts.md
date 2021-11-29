@@ -158,7 +158,25 @@ You may include this parameter to identify your app in our stats, so that we can
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/api/data/shows/day/:day.opml" baseUrl="https://data.bff.fm" summary="Schedule Index" %}
+{% swagger method="get" path="/api/data/shows/scheduled.opml" baseUrl="https://data.bff.fm" summary="Schedule Index" %}
+{% swagger-description %}
+OPML outline including all shows that are regularly scheduled.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="app_id" %}
+You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="OPML outline of shows scheduled on the specified day." %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/api/data/shows/day/:day.opml" baseUrl="https://data.bff.fm" summary="Day Index" %}
 {% swagger-description %}
 OPML outline for day scheduled show linking to respective RSS feeds.
 {% endswagger-description %}
