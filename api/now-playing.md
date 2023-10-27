@@ -72,19 +72,7 @@ See Also: [Audio Hijack Pro's “Now Playing.txt” documentation](https://rogue
 
 {% swagger baseUrl="https://data.bff.fm" path="/api/data/tracks/now.text" method="get" summary="One-Line Summary" %}
 {% swagger-description %}
-A single-line summary of what's playing on BFF.fm. 
-
-`Track Name`
-
- followed by 
-
-`Artist`
-
-, separated by 
-
-`-`
-
-.
+A single-line summary of what's playing on BFF.fm. `Track Name` followed by `Artist`, separated by `-`.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="app_id" type="string" %}

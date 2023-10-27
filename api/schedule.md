@@ -1,34 +1,20 @@
 ---
-description: 'What''s on BFF.fm, and when.'
+description: What's on BFF.fm, and when.
 ---
 
 # Schedules
 
-{% api-method method="get" host="https://data.bff.fm" path="/shows/all.ics" %}
-{% api-method-summary %}
-Full BFF.fm Schedule
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://data.bff.fm" path="/shows/all.ics" method="get" summary="Full BFF.fm Schedule" %}
+{% swagger-description %}
 iCalendar for complete BFF.fm weekly schedule.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" %}
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="Cake successfully retrieved." %}
+```
 BEGIN:VCALENDAR
 PRODID:-//Best Frequencies\, Inc//BFF.FM//EN
 VERSION:2.0
@@ -100,43 +86,25 @@ BEGIN:VEVENT
 END:VEVENT
 END:VCALENDAR
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 
 
-{% api-method method="get" host="https://data.bff.fm" path="/shows/index/:day.ics" %}
-{% api-method-summary %}
-Single Day Schedule
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://data.bff.fm" path="/shows/index/:day.ics" method="get" summary="Single Day Schedule" %}
+{% swagger-description %}
 iCalendar schedule for a single day of BFF.fm broadcasts.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name=":day" type="string" required=true %}
+{% swagger-parameter in="path" name=":day" type="string" %}
 Day of the week. \`monday\`, \`tuesday\`, \`wednesday\`, \`thursday\`, \`friday\`, \`saturday\`, \`sunday\`
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=false %}
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 BEGIN:VCALENDAR
 PRODID:-//Best Frequencies\, Inc//BFF.FM//EN
@@ -209,42 +177,24 @@ BEGIN:VEVENT
 END:VEVENT
 END:VCALENDAR
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://data.bff.fm" path="/shows/:show.ics" %}
-{% api-method-summary %}
-Specific Show Schedule
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://data.bff.fm" path="/shows/:show.ics" method="get" summary="Specific Show Schedule" %}
+{% swagger-description %}
 iCalendar for a specific BFF.fm show.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name=":show" type="string" required=true %}
+{% swagger-parameter in="path" name=":show" type="string" %}
 The slug for the show
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=false %}
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 BEGIN:VCALENDAR
 PRODID:-//Best Frequencies\, Inc//BFF.FM//EN
 VERSION:2.0
@@ -292,8 +242,5 @@ END:VALARM
 END:VEVENT
 END:VCALENDAR
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

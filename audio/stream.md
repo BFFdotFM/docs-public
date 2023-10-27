@@ -4,44 +4,27 @@ description: Get BFF.fm playback live in your app.
 
 # Live Broadcast
 
-{% api-method method="get" host="https://stream.bff.fm" path="/1/mp3.format" %}
-{% api-method-summary %}
-MP3 Audio Stream
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://stream.bff.fm" path="/1/mp3.format" method="get" summary="MP3 Audio Stream" %}
+{% swagger-description %}
 The live BFF.fm broadcast is available encoded in MP3, packaged in a variety of formats.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="format" type="string" required=true %}
+{% swagger-parameter in="path" name="format" type="string" %}
 The playlist format desired: \`mp3\`, \`xspf\`, \`pls\`, \`m3u\`
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% endswagger-parameter %}
 
-{% api-method-headers %}
-{% api-method-parameter name="User-Agent" type="string" required=true %}
+{% swagger-parameter in="header" name="User-Agent" type="string" %}
 The name of your app, so that we can better understand a little bit about how our listeners prefer to hear BFF.fm
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="app\_id" type="string" required=false %}
+{% swagger-parameter in="query" name="app_id" type="string" %}
 You may include this parameter to identify your app in our stats, so that we can understand who's building cool stuff for BFF.fm and feature you!
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 {% tabs %}
 {% tab title="mp3.mp3" %}
+{% code title="mp3.mp3" %}
 ```http
 HTTP/1.0 200 OK
 Access-Control-Expose-Headers: ETag, If-None-Match
@@ -67,16 +50,20 @@ Content-Type: audio/mpeg
 
 [MP3 Binary Data]
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="mp3.m3u" %}
+{% code title="mp3.m3u" %}
 ```
 http://stream.bff.fm/1/mp3.mp3
 
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="mp3.pls" %}
+{% code title="mp3.pls" %}
 ```
 [playlist]
 File1=http://stream.bff.fm/1/mp3.mp3
@@ -85,9 +72,11 @@ Length1=-1
 NumberOfEntries=1
 Version=2
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="mp3.xspf" %}
+{% code title="mp3.xspf" %}
 ```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <playlist xmlns="http://xspf.org/ns/0/" version="1">
@@ -104,12 +93,9 @@ Version=2
   </trackList>
 </playlist>
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

@@ -182,33 +182,7 @@ OPML outline for day scheduled show linking to respective RSS feeds.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="day" required="true" %}
-Name of the schedule day to return. One of 
-
-`monday`
-
- , 
-
-`tuesday`
-
-, 
-
-`wednesday`
-
-, 
-
-`thursday`
-
-, 
-
-`friday`
-
-, 
-
-`saturday`
-
-, 
-
-`sunday`
+Name of the schedule day to return. One of `monday` , `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="app_id" %}
